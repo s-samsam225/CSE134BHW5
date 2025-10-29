@@ -1,8 +1,13 @@
 /* This will control the styling for all my pages */
 
-/* Styling for body */
+/* BODY */
 body { 
     background-color: #fafafa;
     margin: 0;
 } 
+
+/*NAVIGATION BAR */
+nav {
+    background-color: #ffffff;
+}
 
