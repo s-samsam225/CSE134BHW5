@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Postpartum Mental Health App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Subpage describing the postpartum mental health app.">
+
+  <!-- Added simple borders so the layout is visible for grading (semantic structure focus) -->
+  <style>
+    header, nav, main, section, article, figure, footer { border: 1px solid black; }
+  </style>
+
+  <!-- JS plaeholder -->
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
+  </noscript>
+</head>
+
+<body>
+  <header>
+    <!-- Clear page title for accessibility and navigation -->
+    <h1>The Fourth Trimester: A Postpartum Mental Health App</h1>
+
+    <!-- Navigation bar reused across all site pages for consistency -->
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- Overview section describing the project goal and mechanics -->
+    <section aria-labelledby="overview">
+      <h2 id="overview">Overview & Functionality</h2>
+      <article>
+        <!-- Summarized the main gameplay + educational purpose -->
+        <p>
+            My postpartum mental health app addresses the care gap that often occurs after hospital discharge, 
+            when new mothers face emotional and physical risks while caregivers experience overload. The goal is 
+            to reduce hospital readmissions, improve maternal mental health, and enhance patient satisfaction through 
+            continuous, accessible support. This solution is a GenAI-powered chatbot that provides personalized wellness 
+            tracking, appointment scheduling, and access to community forums. It includes a caregiver or partner mode, 
+            multilingual support, and a calming, inclusive design to reduce cognitive overload. The system is HIPAA-compliant,
+            ensures sensitive data handling and informed consent, and can be integrated easily into existing telehealth platforms. 
+            While not a substitute for clinical care, it complements healthcare teams by improving patient trust, engagement, 
+            and overall well-being across diverse postpartum experiences.
+        </p>
+      </article>
+    </section>
+
+    <!-- Section displaying screenshots of key app screens -->
+    <section aria-labelledby="screens">
+      <h2 id="screens">Screens</h2>
+
+      <!-- Screenshot 1: Wireframe -->
+      <figure>
+        <picture>
+          <source srcset="assets/projects/AccentureAppWireframe.png" type="image/png">
+          <img src="assets/projects/AccentureAppWireframe.png"
+               alt="App home screen showing game mode, settings, and credits"
+               height="320">
+        </picture>
+        <figcaption>Wireframe displaying 3 key screens for app.</figcaption>
+      </figure>
+
+      <!-- Screenshot 2: Bedroom screen -->
+      <figure>
+        <picture>
+          <source srcset="assets/projects/EnergyAveBedroom.png" type="image/png">
+          <img src="assets/projects/EnergyAveBedroom.png"
+               alt="Bedroom screen where player has just earned 200 points from unplugging a lamp"
+               height="320">
+        </picture>
+        <figcaption>
+          Bedroom: Highlights how LED bulbs conserve more energy and awards points for unplugging electronics.
+        </figcaption>
+      </figure>
+
+
+    <!-- Simple form-based navigation back to all projects -->
+    <section aria-labelledby="back">
+      <h2 id="back">Back</h2>
+      <form action="projects.html" method="get">
+        <!-- This button navigates back to Projects page without JS -->
+        <button type="submit">← Back to Projects</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Consistent footer used across pages -->
+    <p><small>&copy; <time datetime="2025">2025</time> Sameera Agarwala</small></p>
+  </footer>
+</body>
+</html>

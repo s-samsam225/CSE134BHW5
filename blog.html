@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog — Sameera Agarwala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Blog posts on design, neurotech, and lessons learned.">
+
+  <!-- Basic border-only styling just for structure visibility during grading -->
+  <style>
+    header, nav, main, section, article, footer, figure { border: 1px solid black; }
+  </style>
+
+  <!-- I didn’t add scripts here yet since this is an HTML-only assignment -->
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
+  </noscript>
+  <script></script>
+</head>
+
+<body>
+<header>
+  <!-- Main heading for the page -->
+  <h1>Blog</h1>
+
+  <!-- Reused navigation bar for consistency across the site -->
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experiences.html">Experience</a></li>
+      <!-- aria-current added to indicate current page in nav -->
+      <li><a href="blog.html" aria-current="page">Blog</a></li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="content">
+  <!-- Quick intro section for context -->
+  <section aria-labelledby="intro">
+    <h2 id="intro">Latest posts</h2>
+    <p><strong>Topics:</strong> <em>UCD</em>, bioinformatics, teaching, accessibility.</p>
+  </section>
+
+  <!-- I didn’t have time to write full blog posts yet, so these are placeholders -->
+  <!-- I kept them realistic and relevant to my portfolio themes -->
+
+  <!-- Post 1: Accessibility-focused design example -->
+  <article aria-labelledby="p1-title">
+    <header>
+      <h2 id="p1-title"><a href="#">Designing Accessible Forms</a></h2>
+      <p><time datetime="2025-10-10">October 10, 2025</time> • ~6 min read</p>
+    </header>
+
+    <!-- Used figure + figcaption for semantic image description -->
+    <figure>
+      <picture>
+        <!-- Using WebP as preferred format with fallback -->
+        <source srcset="assets/blog/forms-cover.webp" type="image/webp">
+        <img src="assets/blog/forms-cover.jpg" alt="Form fields with clear labels">
+      </picture>
+      <figcaption>Clear labels, helpful errors, generous hit targets.</figcaption>
+    </figure>
+
+    <p>Practical patterns to prevent user frustration: labels, errors, and focus order that work for everyone.</p>
+    <p><a href="#">Read more</a></p>
+  </article>
+
+  <!-- Post 2: Related to my EEG work with Cognovate / ThinkNeuro -->
+  <article aria-labelledby="p2-title">
+    <header>
+      <h2 id="p2-title"><a href="#">EEG Side Project: What I Learned</a></h2>
+      <p><time datetime="2025-09-21">September 21, 2025</time> • ~8 min read</p>
+    </header>
+
+    <figure>
+      <picture>
+        <!-- This one doesn’t have a .webp fallback yet -->
+        <source srcset="assets/blog/EEGblenderMockup.png" type="image/png">
+        <!-- Manually added a small height to keep the preview tidy -->
+        <img height="100" src="assets/blog/EEGblenderMockup.png" alt="EEG montage with highlighted electrodes">
+      </picture>
+      <figcaption>Researching different electrode types and materials.</figcaption>
+    </figure>
+
+    <p>Notes on prototyping, debugging signal noise, and documenting experiments for future teammates.</p>
+    <p><a href="#">Read more</a></p>
+  </article>
+
+  <!-- Post 3: Example of a lesson plan (teaching/mentorship content) -->
+  <article aria-labelledby="p3-title">
+    <header>
+      <h2 id="p3-title"><a href="#">Lesson Plan: HTML Semantics for Beginners</a></h2>
+      <p><time datetime="2025-08-30">August 30, 2025</time> • ~10 min read</p>
+    </header>
+
+    <p>Objectives, materials, and a step-by-step classroom activity introducing headings, lists, and landmarks.</p>
+    <!-- Using link text instead of button to stay semantic -->
+    <p><a href="#">Download PDF</a></p>
+  </article>
+</main>
+
+<footer>
+  <!-- Simple footer with link back to homepage -->
+  <nav aria-label="Footer"><a href="index.html">Back to Home</a></nav>
+  <p><small>&copy; <time datetime="2025-10-21">2025</time> Sameera Agarwala</small></p>
+</footer>
+</body>
+</html>

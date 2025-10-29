@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Experience — Sameera Agarwala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Internships and leadership experience.">
+
+  <!-- Basic borders just to help visualize layout while grading -->
+  <style>
+    header, nav, main, section, article, footer, figure { border: 1px solid black; }
+  </style>
+
+  <!-- I left a placeholder for the JS-->
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
+  </noscript>
+  <script>/* analytics placeholder only; no interactions */</script>
+</head>
+
+<body>
+<header>
+  <!-- Page heading for experience section -->
+  <h1>Experience</h1>
+
+  <!-- Consistent nav bar across all pages -->
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <!-- aria-current marks this as the active page -->
+      <li><a href="experiences.html" aria-current="page">Experience</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="connect.html">Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="content">
+  <!-- Section groups all of my professional and leadership roles -->
+  <section aria-labelledby="roles">
+    <h2 id="roles">Roles</h2>
+
+    <!-- First experience: Cognovate Labs -->
+    <!-- Included figure + caption for the logo to make it semantically descriptive -->
+    <article aria-labelledby="exp1-title">
+      <header>
+        <h2 id="exp1-title">Engineering Team Lead — Cognovate Labs</h2>
+        <p><time datetime="2025-01">Jan 2025</time> – <time datetime="2025-10">Oct 2025</time> • San Diego, CA</p>
+      </header>
+
+      <figure>
+        <img src="assets/logos/cognovate.png" alt="Cognovate Labs logo">
+        <figcaption>Portable EEG for prehospital stroke assessment.</figcaption>
+      </figure>
+
+      <!-- I bolded the focus areas and italicized tools for quick scannability -->
+      <p><strong>Focus:</strong> EEG methods, signal analysis, and prototyping. 
+         <em>Tools:</em> MATLAB, Python, 3D CAD.</p>
+
+      <!-- Using ordered list to show clear, sequential project responsibilities -->
+      <ol>
+        <li>Designing a portable electroencephalogram (EEG) device to record prehospital patient data.</li>
+        <li>Optimized electrode placement strategy by researching stroke-affected brain regions.</li>
+        <li>Led a 5-member sub-team, delegating coding and hardware integration tasks; presented findings to faculty and industry partners.</li>
+      </ol>
+    </article>
+
+    <!-- Second experience: ThinkNeuro -->
+    <!-- I used an unordered list here since these tasks aren’t necessarily sequential -->
+    <article aria-labelledby="exp2-title">
+      <header>
+        <h2 id="exp2-title">Associate — ThinkNeuro Internship</h2>
+        <p><time datetime="2025-06">Jun 2025</time> – <time datetime="2025-10">Oct 2025</time> • Remote</p>
+      </header>
+
+      <figure>
+        <img src="assets/img/NeuroTechWearables-ResearchPoster.png" alt="Final Research Poster">
+        <figcaption>Wearable neurotech literature synthesis.</figcaption>
+      </figure>
+
+      <p>Led interns synthesizing research on adolescent mental-health detection with wearables.</p>
+      <ul>
+        <li>Drafted an academic-style abstract.</li>
+        <li>Standardized tags for study features and outcomes.</li>
+        <li>Compiled references and summaries for poster drafts.</li>
+      </ul>
+        <!-- Download link for research abstract PDF -->
+        <p>
+            <a href="assets/docs/neurotechnologyAndWearablesAbstract.pdf" download>
+            Download Research Abstract (PDF)
+            </a>
+        </p>
+
+    </article>
+
+    <!-- Third experience: Teaching Assistant position -->
+    <!-- No figure here since this role is academic and text-based -->
+    <article aria-labelledby="exp3-title">
+      <header>
+        <h2 id="exp3-title">Teaching Assistant — COGS 187A</h2>
+        <p><time datetime="2025-07">Jul 2025</time> – <time datetime="2025-09">Sep 2025</time> • UC San Diego</p>
+      </header>
+
+      <!-- Summary paragraph describing scope of the role -->
+      <p>Mentored and guided 6 students in COGS 187A: Usability and Information Architecture.</p>
+
+      <!-- Using a list again for specific, measurable actions -->
+      <ul>
+        <li>Organized weekly tasks, provided technical guidance, and supported web/multimedia design troubleshooting.</li>
+        <li>Met weekly with faculty to discuss course adjustments and provide updates on student progress.</li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <!-- Footer keeps navigation simple and consistent -->
+  <nav aria-label="Footer"><a href="index.html">Back to Home</a></nav>
+  <p><small>&copy; <time datetime="2025-10-21">2025</time> Sameera Agarwala</small></p>
+</footer>
+</body>
+</html>

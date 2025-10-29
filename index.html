@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sameera Agarwala Portfolio Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Sameera Agarwala: projects, experience, blog.">
+
+  <!-- JavaScript file for custom elements (hello-world + portfolio-callout) -->
+  <script type="module" src="assets/script.js"></script>
+
+  <!-- Backup text for users who have JavaScript disabled -->
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
+  </noscript>
+
+  <!-- Border styling just for structure visibility during grading -->
+  <!-- I’m keeping styling minimal since this phase focuses on semantics -->
+  <style>
+    header, nav, main, section, article, footer {
+      border: 1px solid black;
+    }
+    figure {
+      border: 1px dashed gray;
+    }
+  </style>
+
+  <!-- Placeholder for an external script (analytics or interactivity later on) -->
+  <script src="assets/script.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- My name as the primary page heading -->
+    <h1>Sameera Agarwala</h1>
+    <!-- Quick summary of my academic background -->
+    <p><strong>CS: Bioinformatics</strong> &middot; <em>Design & Interaction</em></p>
+
+    <!-- Main navigation bar linking to all key site sections -->
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experiences.html">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- About Me section introducing myself -->
+    <section aria-labelledby="about">
+      <h2 id="about">About Me</h2>
+      <article>
+        <!-- Using picture for image compatibility (webp + fallback) -->
+        <picture>
+          <source srcset="assets/img/SameeraAgarwala.jpg" type="assets/img/SameeraAgarwala.jpg">
+          <!-- Adjusted height so image doesn’t dominate the layout -->
+          <img height="120" src="assets/img/SameeraAgarwala.jpg" alt="Portrait of Sameera">
+        </picture>
+
+        <!-- Short introduction paragraph about who I am and what I do -->
+        <p>
+          Hi! I’m Sameera, a third-year CS: Bioinformatics student who loves creating user-centered web experiences,
+          combining technology with bioengineering, and designing tools that make research and healthcare more accessible.
+        </p>
+
+        <!-- Custom Element #1 (Semantic CSS-based) -->
+        <!-- I defined this in hello-world.js as portfolio-callout -->
+        <!-- Using it to emphasize my design philosophy -->
+        <portfolio-callout>
+          <header><b>My Design Philosophy</b></header>
+          <p><i>
+            I believe in <span>user-centered design</span> that is accessible to everyone, 
+            sustainable in its impact, and mindful of how technology shapes human experiences.
+          </i></p>
+        </portfolio-callout>
+      </article>
+    </section>
+
+    <!-- Quick Links section for site navigation shortcuts -->
+    <section aria-labelledby="quick">
+      <h2 id="quick">Quick Links</h2>
+      <ul>
+        <li><a href="projects.html">See Projects</a></li>
+        <li><a href="blog.html">Read the Blog</a></li>
+        <li><a href="connect.html">Contact</a></li>
+      </ul>
+      <!-- Status and site completion progress (for transparency and fun!) -->
+      <p>This site is currently under development!</p>
+      <p>Site status: <progress value="40" max="100">40%</progress></p>
+    </section>
+
+    <!-- Custom Element #2 -->
+    <!-- This prints "Hello world!" to the console per assignment instructions -->
+    <hello-world></hello-world>
+
+    <!-- MathML Extra Credit -->
+    <!-- Demonstrates use of MathML to display Einstein’s E = mc² formula -->
+    <figure>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>E</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <mo>&InvisibleTimes;</mo>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+      </math>
+      <figcaption><i>Einstein’s mass–energy equivalence: E = m·c²</i></figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    <!-- Footer nav with contact info + external link -->
+    <nav aria-label="Footer">
+      <a href="contact.html">Contact Information</a>
+      <!-- Link to my GitHub using inline SVG as icon -->
+      <!-- I used an SVG instead of an image to demonstrate vector graphics -->
+      <a href="https://github.com/s-samsam225" target="_blank">
+        <svg viewBox="0 0 100 100" role="img" aria-labelledby="gitTitle gitDesc" width="60" height="60">
+          <title id="gitTitle">GitHub Icon</title>
+          <desc id="gitDesc">Link to Sameera Agarwala's GitHub profile.</desc>
+
+          <!-- Outer circle represents a balanced, cohesive design -->
+          <circle cx="50" cy="50" r="45" fill="none" stroke="black" stroke-width="2" />
+
+          <!-- Centered 'GH' text for GitHub logo -->
+          <text
+            x="50"
+            y="58"
+            text-anchor="middle"
+            font-family="sans-serif"
+            font-size="28"
+            fill="black"
+          >
+            GH
+          </text>
+        </svg>
+      </a>    
+    </nav>
+  </footer>
+</body>
+</html>
