@@ -11,3 +11,8 @@ nav {
     background-color: #ffffff;
 }
 
+/*Nav bar will change color when hovered over */
+nav a:hover {
+    background-color: lavenderblush;
+    color: #5d5985;
+}
