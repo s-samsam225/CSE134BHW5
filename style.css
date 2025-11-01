@@ -10,6 +10,14 @@ body {
     margin: 0;
 } 
 
+.about {
+    dispaly: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
 /*NAVIGATION BAR */
 nav {
     background-color: #ffffff;
