@@ -34,17 +34,24 @@ body {
 }
 
 .aboutMeHeader { 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-content: auto 1fr;
     align-items: center;
     background-color: rgb(172, 207, 172);
     padding: 0.5rem 1rem;
-    flex-wrap: wrap;
+}
+
+/*Put the header and about me paragraph to the left */
+.aboutMeHeader h1, .aboutMeHeader p { 
+    grid-column: 1;
+    margin: 0;
 }
 
 /*NAVIGATION BAR */
 .aboutMeHeader nav {
-    background-color: #ffffff;
+    grid-column: 2;
+    justify-self: end;
+    background-color: transparent;
 }
 
 .aboutMeHeader nav ul {
@@ -54,6 +61,7 @@ body {
     gap: 1.5rem;
     margin: 0;
     padding: 0;
+    border-radius: 8px;
 }
 
 /*Nav bar will change color when hovered over */
