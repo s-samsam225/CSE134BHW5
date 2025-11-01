@@ -18,6 +18,21 @@ body {
     margin-top: 1rem;
 }
 
+.about picture {
+    flex: 0 0 150px;
+}
+
+.about img {
+    display: block;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about portfolio-callout {
+    flex: 1 1 280px;
+}
+
 /*NAVIGATION BAR */
 nav {
     background-color: #ffffff;
