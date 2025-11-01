@@ -33,12 +33,21 @@ body {
     flex: 1 1 280px;
 }
 
+.aboutMeHeader { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+}
+
 /*NAVIGATION BAR */
-nav {
+.aboutMeHeader nav {
     background-color: #ffffff;
 }
 
-nav ul {
+.aboutMeHeader nav ul {
     list-style: none; /*removed bullets from nav bar style*/
     display: flex;
     justify-content: center;
@@ -48,14 +57,15 @@ nav ul {
 }
 
 /*Nav bar will change color when hovered over */
-nav a:hover {
+.aboutMeHeader nav a:hover {
     background-color: lavenderblush;
     color: #5d5985;
 }
 
-nav a {
+.aboutMeHeader nav a {
     text-decoration: none /*removes underlines*/
 }
+
 header {
     background-color: rgb(172, 207, 172);
 
