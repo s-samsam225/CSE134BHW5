@@ -9,6 +9,7 @@ body {
     background-color: #fafafa;
     margin: 0;
     display: flex;
+    flex-direction: column;
 } 
 
 /*NAVIGATION BAR */
