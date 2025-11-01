@@ -15,11 +15,21 @@ nav {
     background-color: #ffffff;
 }
 
+nav ul {
+    list-style: none; /*removed bullets from nav bar style*/
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
 /*Nav bar will change color when hovered over */
 nav a:hover {
     background-color: lavenderblush;
     color: #5d5985;
 }
+
 header {
     background-color: rgb(172, 207, 172);
 
