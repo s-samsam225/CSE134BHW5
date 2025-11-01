@@ -1,8 +1,7 @@
 /* This will control the styling for all my pages */
 
 /* Import custom font */
-
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600&display=swap");
 
 /* BODY */
 body { 
