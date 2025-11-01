@@ -28,3 +28,12 @@ header {
 footer {
     background-color: rgb(172, 207, 172);
 }
+
+/*BLOG POSTS*/
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;                         /* space between cards */
+    align-items: stretch;
+  }
+  
