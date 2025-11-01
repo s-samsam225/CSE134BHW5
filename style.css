@@ -37,7 +37,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
+    background-color: rgb(172, 207, 172);
     padding: 0.5rem 1rem;
     flex-wrap: wrap;
 }
