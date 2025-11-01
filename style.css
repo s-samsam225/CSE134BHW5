@@ -53,6 +53,9 @@ nav a:hover {
     color: #5d5985;
 }
 
+nav a {
+    text-decoration: none /*removes underlines*/
+}
 header {
     background-color: rgb(172, 207, 172);
 
