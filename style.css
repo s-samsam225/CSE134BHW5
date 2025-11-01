@@ -19,3 +19,11 @@ nav a:hover {
     background-color: lavenderblush;
     color: #5d5985;
 }
+header {
+    background-color: rgb(172, 207, 172);
+
+}
+
+footer {
+    background-color: rgb(172, 207, 172);
+}
