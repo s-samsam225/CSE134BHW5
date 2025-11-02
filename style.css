@@ -103,9 +103,8 @@ footer {
     margin: 2rem 0;
   }
   
-  .status-bar h2 {
+  .status-bar h4 {
     flex-basis: 100%;         
-    margin-bottom: 0.5rem;
   }
   
   .status-bar p {
