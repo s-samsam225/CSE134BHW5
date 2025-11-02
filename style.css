@@ -92,3 +92,35 @@ footer {
     margin: 1rem;
   }
   
+
+  .status-bar {
+    display: flex;
+    align-items: center;      /* vertically center items */
+    justify-content: center;  /* center everything horizontally */
+    flex-wrap: wrap;          /* wrap on smaller screens */
+    gap: 1rem;                /* space between elements */
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .status-bar h2 {
+    flex-basis: 100%;         
+    margin-bottom: 0.5rem;
+  }
+  
+  .status-bar p {
+    margin: 0;
+  }
+  
+  .status-bar progress {
+    accent-color: #5d5985;    /* color progress bar */
+    height: 1rem;
+    border-radius: 8px;
+  }
+  
+  .status-gif {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
