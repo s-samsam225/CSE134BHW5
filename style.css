@@ -27,7 +27,7 @@ body {
     width: 150px;
     height: auto;
     border-radius: 8px;
-    padding: 2px;
+    padding: 5px;
 }
 
 .about portfolio-callout {
@@ -78,6 +78,10 @@ header nav a {
 
 footer nav{
     background-color: rgb(172, 207, 172);
+}
+
+footer img{
+    padding: 4px;
 }
 
 /*BLOG POSTS*/
