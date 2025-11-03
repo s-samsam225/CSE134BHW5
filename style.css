@@ -181,6 +181,7 @@ article:has(figure img) {
    margin: 4rem auto;
    padding: 1rem;
    border-radius: 16px;
+   max-width: 80%;
 }
 
 .card figure { 
