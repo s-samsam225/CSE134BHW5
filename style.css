@@ -172,7 +172,10 @@ article:has(figure img) {
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
    padding: 16px;
    transition: transform .12s ease, box-shadow .12s ease;
-   width: 100px;
+   justify-content:center;
+   gap: 20px; /*gap between flex boxes*/
+
+   
 }
 
 .card figure { 
