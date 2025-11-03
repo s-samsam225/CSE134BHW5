@@ -10,13 +10,13 @@ body {
     margin: 0;
 } 
 
-.about-me {
+.about-me article{
     display: flex;
     align-items: center;
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-    background-color: #9e9db4;
+    background-color: #b7b6c7;
 }
 
 .about-me picture {
