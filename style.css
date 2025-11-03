@@ -79,6 +79,7 @@ header nav a {
 
 footer nav{
     background-color: rgb(172, 207, 172);
+    justify-content: center;
 }
 
 footer img{
