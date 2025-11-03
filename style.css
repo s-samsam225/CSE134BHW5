@@ -70,6 +70,7 @@ header nav ul {
 header nav a:hover {
     background-color: lavenderblush;
     color: #5d5985;
+    border-radius: 2px;
 }
 
 header nav a {
