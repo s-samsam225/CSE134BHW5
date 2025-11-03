@@ -34,20 +34,41 @@
   </header>
 
   <main id="content">
-    <section aria-labelledby="featured">
+    <section>
 
       <!-- Project 1 -->
       <article>
         <header>
-          <h3 id="proj1-title"><a href="EnergyAve.html">Educational Sustainability App</a></h3>
-          <p><time datetime="2025-04">Apr 2025</time> • <strong>Role:</strong> Software Engineer • Planet Flip, San Diego, CA</p>
+          <h3><a href="EnergyAve.html">Educational Sustainability App</a></h3>
+          <ul class="project-meta">
+            <li><time datetime="2025-04">Apr 2025</time></li>
+            <li><strong>Role:</strong> Software Engineer</li>
+            <li>Planet Flip in San Diego, CA</li>
+          </ul>
         </header>
-
+        
         <figure>
-          <img src="assets/projects/EnergyAveHome.png" height="300" alt="Home screen from the Energy Avenue sustainability education game">
+          <picture>
+            <source
+              srcset="assets/projects/EnergyAveHome-800.avif 800w,
+                      assets/projects/EnergyAveHome-1200.avif 1200w"
+              type="image/avif">
+            <source
+              srcset="assets/projects/EnergyAveHome-800.webp 800w,
+                      assets/projects/EnergyAveHome-1200.webp 1200w"
+              type="image/webp">
+            <img
+              src="assets/projects/EnergyAveHome.png"
+              srcset="assets/projects/EnergyAveHome-800.jpg 800w,
+                      assets/projects/EnergyAveHome-1200.jpg 1200w"
+              sizes="(max-width: 700px) 92vw, 600px"
+              width="1200" height="700"
+              alt="Home screen from the Energy Avenue sustainability education game"
+              loading="lazy" decoding="async">
+          </picture>
           <figcaption>Home screen of the game demo.</figcaption>
         </figure>
-
+        
         <h4>Areas of focus:</h4>
         <ul>
           <li>Tech: Construct 3 &amp; JavaScript</li>
@@ -61,13 +82,19 @@
           <li>Coordinated progress and Q&amp;A with the partner organization’s lead coordinator.</li>
         </ol>
 
-        <p><a href="https://aquamarine-faloodeh-96404d.netlify.app/">Demo</a></p>
-      </article>
+        <p>
+          <a href="https://aquamarine-faloodeh-96404d.netlify.app/"
+             target="_blank" rel="noopener"
+             aria-label="Open Energy Avenue demo in a new tab">
+             Demo (opens in new tab)
+          </a>
+        </p>
+        </article>
 
       <!-- Project 2 -->
       <article>
         <header>
-          <h3 id="proj2-title"><a href="accentureCaseStudy.html">Fourth Trimester App (Concept)</a></h3>
+          <h3><a href="accentureCaseStudy.html">Fourth Trimester App (Concept)</a></h3>
           <p><time datetime="2025-03">Mar 2025</time> • <strong>Role:</strong> Designer/Developer • Girls Who Code &amp; Accenture</p>
         </header>
 
@@ -82,7 +109,7 @@
           <li>Focus: Accessibility, simple flows, calming UI</li>
         </ul>
 
-        <h5>Roles and responsibilities:</h5>
+        <h4>Roles and responsibilities:</h4>
         <ul>
             <li>Completed my case study and presented results to Accenture volunteers</li>
           </ul>
@@ -92,7 +119,36 @@
   </main>
 
   <footer>
-    <p><small>&copy; <time datetime="2025-10-21">2025</time> Sameera Agarwala</small></p>
+    <!-- Social navigation -->
+    <nav aria-label="Social links">
+      <ul class="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/sameera-agarwala-549881248/"
+             target="_blank" rel="noopener noreferrer">
+            <img src="assets/logos/linkedinlogo.png" width="28" height="28" alt="">
+            <span class="sr-only">LinkedIn — Sameera Agarwala (opens in new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/s-samsam225"
+             target="_blank" rel="noopener noreferrer">
+            <img src="assets/logos/githubLogo.png" width="28" height="28" alt="">
+            <span class="sr-only">GitHub — s-samsam225 (opens in new tab)</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Footer actions -->
+    <p class="footer-cta">
+      <a class="cta-link" href="connect.html">Let’s connect</a>
+    </p>
+  
+    <p class="legal">
+      <small>&copy; <time datetime="2025-01-01">2025</time> Sameera Agarwala ·
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+      </small>
+    </p>
   </footer>
 </body>
 </html>

@@ -46,7 +46,12 @@
         <picture>
           <source srcset="assets/home/SameeraAgarwala.jpg" type="assets/home/SameeraAgarwala.jpg">
           <!--Fallback image tag-->
-          <img src="assets/home/SameeraAgarwala.jpg" alt="Portrait of Sameera">
+          <img 
+          src="assets/home/SameeraAgarwala.jpg" 
+          alt="Portrait of Sameera"
+          >
+          
+
         </picture>
 
         <portfolio-callout>
@@ -73,43 +78,36 @@
   </main>
 
   <footer>
-    <!-- Footer nav with contact info + external link -->
-    <nav aria-label="Footer">
-
-      <!--Linkedin Link-->
-      <a href="https://www.linkedin.com/in/sameera-agarwala-549881248/" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      aria-label="Sameera Agarwala on LinkedIn">
-   
-     <img
-       src="assets/logos/linkedinlogo.png"
-       width="28" height="28"
-       alt="LinkedIn logo"
-       loading="lazy" 
-       decoding="async">
-      </a>
-
-      <!--Github link-->
-      <a href="https://github.com/s-samsam225" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      aria-label="Sameera Agarwala on Github">
-   
-     <img
-       src="assets/logos/githubLogo.png"
-       width="28" height="28"
-       alt="Github logo"
-       loading="lazy" 
-       decoding="async">
-      </a>
-
-      
-      <p><a href="connect.html">Interested in chatting?</a></p>
-      <p><small>&copy; <time datetime="2025-10-21">2025</time> Sameera Agarwala</small></p>
-
+    <!-- Social navigation -->
+    <nav aria-label="Social links">
+      <ul class="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/sameera-agarwala-549881248/"
+             target="_blank" rel="noopener noreferrer">
+            <img src="assets/logos/linkedinlogo.png" width="28" height="28" alt="">
+            <span class="sr-only">LinkedIn — Sameera Agarwala (opens in new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/s-samsam225"
+             target="_blank" rel="noopener noreferrer">
+            <img src="assets/logos/githubLogo.png" width="28" height="28" alt="">
+            <span class="sr-only">GitHub — s-samsam225 (opens in new tab)</span>
+          </a>
+        </li>
+      </ul>
     </nav>
-
+  
+    <!-- Footer actions -->
+    <p class="footer-cta">
+      <a class="cta-link" href="connect.html">Let’s connect</a>
+    </p>
+  
+    <p class="legal">
+      <small>&copy; <time datetime="2025-01-01">2025</time> Sameera Agarwala ·
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+      </small>
+    </p>
   </footer>
-</body>
+  </body>
 </html>

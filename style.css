@@ -126,3 +126,12 @@ footer img{
     border-radius: 8px;
   }
   
+header {
+    min-height: 20dvh;
+}
+
+/* Extra Credit */
+article:has(figure img) {
+    border: 1px solid color-mix(in oklab, var(--brand) 25%, #000 5%);
+  }
+  
