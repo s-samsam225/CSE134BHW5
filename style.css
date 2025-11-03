@@ -178,8 +178,9 @@ article:has(figure img) {
    transition: transform .12s ease, box-shadow .12s ease;
    justify-content:center;
    gap: 20px; /*gap between flex boxes*/
-
-   
+   margin: 4rem auto;
+   padding: 1rem;
+   border-radius: 16px;
 }
 
 .card figure { 
