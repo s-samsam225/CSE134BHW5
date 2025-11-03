@@ -74,7 +74,7 @@ header nav a:hover {
 }
 
 header nav a {
-    text-decoration: none /*removes underlines*/
+    text-decoration: none; /*removes underlines*/
 }
 
 footer nav ul, footer nav li {
@@ -122,6 +122,7 @@ footer {
     gap: 1rem;                         /* space between cards */
     justify-content: center;
     margin: 1rem;
+    background-color: lavender;
   }
   
 
@@ -169,5 +170,15 @@ article:has(figure img) {
    flex-direction: column;
    background: lavender;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   padding: 20px;
+   padding: 16px;
+   transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.card figure { 
+    margin: 12px 0;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(0,0,0,.12);
 }
