@@ -271,7 +271,7 @@ html {
     grid-template-columns: 1fr; /* 1 column for phone */
   }
   .card {
-    max-width: 100%; /* Cards fill available width on smaller screens */
+    max-width: 80%; 
   }
   
   /* ===== Tablet & Small Laptop (≥700px) ===== */
