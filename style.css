@@ -17,12 +17,8 @@ body {
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-    background-color: lavender;
 }
 
-article h2 {
-    background-color: lavender;
-}
 
 .about-me picture {
     flex: 0 0 150px;
