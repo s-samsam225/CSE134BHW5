@@ -1,12 +1,17 @@
 /* ===== Base / Tokens ===== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600&display=swap");
 
+@property --tint {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: lavender;
+  }
+  
 :root {
   --bg: #fffbf7;
   --fg: #111;
   --card: #ffffff;
   --accent: #5d5985;
-  --tint: lavender;
   --brand: #5d5985;
 }
 
@@ -167,7 +172,7 @@ article:has(figure img) {
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--tint); /* was 'lavender'; keep or set to var(--card) */
+  background: var(--tint);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform .12s ease, box-shadow .12s ease;
   justify-content: center;
