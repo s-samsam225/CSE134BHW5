@@ -189,6 +189,13 @@ article:has(figure img) {
     box-shadow: 0 12px 22px rgba(0,0,0,.12);
 }
 
+card picture {
+    max-width:100%;
+    height:auto;
+     border-radius:8px; 
+     display:block;
+}
+
 a {
     text-decoration: none;
     color: inherit; 
