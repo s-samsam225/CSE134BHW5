@@ -189,11 +189,11 @@ article:has(figure img) {
     box-shadow: 0 12px 22px rgba(0,0,0,.12);
 }
 
-card picture {
+.card img {
     max-width:100%;
     height:auto;
-     border-radius:8px; 
-     display:block;
+    border-radius:8px; 
+    display:block;
 }
 
 a {
