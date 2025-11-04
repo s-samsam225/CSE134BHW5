@@ -11,31 +11,31 @@ body {
     margin: 0;
 } 
 
+/* ABOUT ME*/
 .about-me {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-}
-
-
-.about-me picture {
-    flex: 0 0 150px;
-}
-
-.about-me img {
-    display: block;
-    width: 150px;
-    height: auto;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-.about-me portfolio-callout {
-    flex: 1 1 280px;
-}
-
+  
+    picture {
+      flex: 0 0 150px;
+    }
+  
+    img {
+      display: block;
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      padding: 5px;
+    }
+  
+    portfolio-callout {
+      flex: 1 1 280px;
+    }
+  }
+  
 header { 
     display: grid;
     justify-content: auto 1fr;
