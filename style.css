@@ -192,19 +192,143 @@ article:has(figure img) {
   }
 }
 
-/* ===== Optional header & footer color ===== */
+/* ===== Header & footer color ===== */
 .main-nav {
   background-color: rgb(172, 207, 172);
 }
 
-/* ===== Media query for differnt screen sizes ===== */
-@media (min-width: 700px) {
-  .about-me {
-    flex-direction: row;
-    picture { flex-basis: 160px; }
-  }
-}
+/* ===== Responsive Design Section ===== */
 
-@media (min-width: 1000px) {
-  /* future desktop tweaks can live here */
-}
+/* --- General reset for smoother scaling --- */
+html {
+    overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+  }
+  img {
+    max-width: 100%; /* Makes sure all images resize properly */
+    height: auto;
+    display: block;
+  }
+  
+  .container {
+    width: min(100% - 2rem, 1100px);
+    margin-inline: auto;
+  }
+  
+  /* ===== Navigation (Hamburger Menu) ===== */
+  header.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+  
+    .burger {
+      justify-self: end;
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  
+    nav {
+      /* nav is hidden until the burger is clicked */
+      grid-column: 1 / -1;
+      display: none;
+  
+      ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding-top: 0.5rem;
+  
+        a {
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+  
+    /* This line makes the menu appear when the checkbox is checked */
+    #nav-toggle:checked ~ nav {
+      display: block;
+    }
+  }
+  
+  /* ===== Layout adjustments for phone (default) ===== */
+  .about-me {
+    flex-direction: column;
+    picture {
+      max-width: 200px;
+    }
+  }
+  .posts,
+  .projects {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr; /* 1 column for phone */
+  }
+  .card {
+    max-width: 100%; /* Cards fill available width on smaller screens */
+  }
+  
+  /* ===== Tablet & Small Laptop (≥700px) ===== */
+  @media (min-width: 700px) {
+    header.main-nav {
+      grid-template-columns: 1fr auto;
+  
+      .burger {
+        display: none; /* Hide burger on tablets and up */
+      }
+  
+      nav {
+        display: block; /* Always show nav */
+        grid-column: 2;
+  
+        ul {
+          flex-direction: row;
+          gap: 1rem;
+          padding-top: 0;
+        }
+      }
+    }
+  
+    /* Make the About section side-by-side instead of stacked */
+    .about-me {
+      flex-direction: row;
+      picture {
+        flex-basis: 160px;
+      }
+    }
+  
+    /* Use two columns for project/blog grids */
+    .posts,
+    .projects {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  /* ===== Desktop (≥1100px) ===== */
+  /* This breakpoint is for large laptops and desktops — I add more columns and slight scaling */
+  @media (min-width: 1100px) {
+    /* Grid expands to 3 columns for large screens */
+    .posts,
+    .projects {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  
+    /* Slightly larger About section image */
+    .about-me picture {
+      flex-basis: 180px;
+    }
+  }
+  
+  /* ===== Image sizing across devices ===== */
+  picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
