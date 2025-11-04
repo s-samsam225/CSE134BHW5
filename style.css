@@ -204,8 +204,6 @@ article:has(figure img) {
 }
 
 /* ===== Responsive Design Section ===== */
-
-/* --- General reset for smoother scaling --- */
 html {
     overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
   }
@@ -301,7 +299,7 @@ html {
       }
     }
   
-    /* Make the About section side-by-side instead of stacked */
+    /* Makes the About section side-by-side instead of stacked */
     .about-me {
       flex-direction: row;
       picture {
