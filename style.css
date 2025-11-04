@@ -1,199 +1,210 @@
-/* This will control the styling for all my pages */
-
-/* Import custom font */
+/* ===== Base / Tokens ===== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600&display=swap");
 
-/* BODY */
-body { 
-    /*Fallback fonts*/
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-    background-color: #fffbf7;
-    margin: 0;
-} 
-
-/* ABOUT ME*/
-.about-me {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  
-    picture {
-      flex: 0 0 150px;
-    }
-  
-    img {
-      display: block;
-      width: 150px;
-      height: auto;
-      border-radius: 8px;
-      padding: 5px;
-    }
-  
-    portfolio-callout {
-      flex: 1 1 280px;
-    }
-  }
-  
-header { 
-    display: grid;
-    justify-content: auto 1fr;
-    align-items: center;
-    padding: 0.5rem 1rem;
+:root {
+  --bg: #fffbf7;
+  --fg: #111;
+  --card: #ffffff;
+  --accent: #5d5985;
+  --tint: lavender;
+  --brand: #5d5985;
 }
 
-/*Put the header and about me paragraph to the left */
-header h1, p { 
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  margin: 0;
+}
+
+/* ===== Utilities ===== */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 1px, 1px);
+  white-space: nowrap; border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: rgb(43, 0, 255);
+  }
+}
+
+/* ===== About Me ===== */
+.about-me {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  picture { flex: 0 0 150px; }
+
+  img {
+    display: block;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    padding: 5px;
+  }
+
+  portfolio-callout { flex: 1 1 280px; }
+}
+
+/* ===== Header (top nav) ===== */
+header.main-nav {
+  display: grid;
+  grid-template-columns: 1fr auto; /* fixed invalid property */
+  align-items: center;
+  padding: 0.5rem 1rem;
+  min-height: 20dvh;
+
+  h1,
+  p {
     grid-column: 1;
     margin: 0;
-}
+  }
 
-/*NAVIGATION BAR */
-header nav {
+  nav {
     grid-column: 2;
     justify-self: end;
     background-color: transparent;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      border-radius: 8px;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          background-color: lavenderblush;
+          color: var(--accent);
+          border-radius: 8px;
+        }
+      }
+    }
+  }
 }
 
-header nav ul {
-    list-style: none; /*removed bullets from nav bar style*/
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-    border-radius: 8px;
-}
+/* ===== Footer ===== */
+footer {
+  background-color: rgb(172, 207, 172);
+  justify-content: center;
 
-/*Nav bar will change color when hovered over */
-header nav a:hover {
-    background-color: lavenderblush;
-    color: #5d5985;
-    border-radius: 8px;
-}
-
-header nav a {
-    text-decoration: none; /*removes underlines*/
-}
-
-footer nav ul, footer nav li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-footer nav ul {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    align-items: center;
-}
-footer nav{
-    background-color: rgb(172, 207, 172);
-    justify-content: center;
-}
-
-footer nav a img{
-    display: block;
-    width: 28px;
-    height: 28px;
-    padding: 4px;
-}
-
-footer { 
+  nav {
     background-color: rgb(172, 207, 172);
     justify-content: center;
 
+    ul,
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a img {
+      display: block;
+      width: 28px;
+      height: 28px;
+      padding: 4px;
+    }
+  }
 }
-/*Make screen reader only text "invisible"*/
-.sr-only {
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0, 0, 1px, 1px);
-    white-space: nowrap; border: 0;
-  }
-  
-  .status-bar {
-    display: flex;
-    align-items: center;      /* vertically center items */
-    justify-content: center;  /* center everything horizontally */
-    flex-wrap: wrap;          /* wrap on smaller screens */
-    gap: 1rem;                /* space between elements */
-    text-align: center;
-    margin: 2rem 0;
-  }
-  
-  .status-bar h4 {
-    flex-basis: 100%;         
-  }
-  
-  .status-bar p {
-    margin: 0;
-  }
-  
-  .status-bar progress {
-    accent-color: #5d5985;    /* color progress bar */
+
+/* ===== Status Bar ===== */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+  margin: 2rem 0;
+
+  h4 { flex-basis: 100%; }
+
+  p { margin: 0; }
+
+  progress {
+    accent-color: var(--accent);
     height: 1rem;
     border-radius: 8px;
   }
-  
+
   .status-gif {
     width: 80px;
     height: auto;
     border-radius: 8px;
   }
-  
-header {
-    min-height: 20dvh;
 }
 
-/* Extra Credit */
+/* ===== Extra Credit example ===== */
 article:has(figure img) {
-    border: 1px solid color-mix(in oklab, var(--brand) 25%, #000 5%);
-  }
-  
+  border: 1px solid color-mix(in oklab, var(--brand) 25%, #000 5%);
+}
+
+/* ===== Card ===== */
 .card {
-   display: flex;
-   flex-direction: column;
-   background: lavender;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   padding: 16px;
-   transition: transform .12s ease, box-shadow .12s ease;
-   justify-content:center;
-   gap: 20px; /*gap between flex boxes*/
-   margin: 4rem auto;
-   padding: 1rem;
-   border-radius: 16px;
-   max-width: 80%;
-}
+  display: flex;
+  flex-direction: column;
+  background: var(--tint); /* was 'lavender'; keep or set to var(--card) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform .12s ease, box-shadow .12s ease;
+  justify-content: center;
+  gap: 20px;
+  margin: 4rem auto;
+  padding: 1rem;
+  border-radius: 16px;
+  max-width: 80%;
 
-.card figure { 
-    margin: 12px 0;
-}
+  figure { margin: 12px 0; }
 
-.card:hover {
+  &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 22px rgba(0,0,0,.12);
-}
-
-.card img {
-    max-width:100%;
-    height:auto;
-    border-radius:8px; 
-    display:block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit; 
+    box-shadow: 0 12px 22px rgba(0, 0, 0, .12);
   }
 
-a:hover {
-    color:rgb(43, 0, 255);
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
 }
-  
+
+/* ===== Optional header & footer color ===== */
 .main-nav {
-    background-color: rgb(172, 207, 172);
+  background-color: rgb(172, 207, 172);
+}
+
+/* ===== Media query for differnt screen sizes ===== */
+@media (min-width: 700px) {
+  .about-me {
+    flex-direction: row;
+    picture { flex-basis: 160px; }
+  }
+}
+
+@media (min-width: 1000px) {
+  /* future desktop tweaks can live here */
 }
