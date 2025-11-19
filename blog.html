@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Blog posts on design, neurotech, and lessons learned.">
 
-  <!--Link to css stylesheet-->
   <link rel="stylesheet" href="style.css">
 
-  <!-- I didn’t add scripts here yet since this is an HTML-only assignment -->
-  <noscript>
-    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
-  </noscript>
-  <script></script>
+  <script src="script.js"></script>
+
 </head>
 
 <body>
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
+  </noscript>
+
 <header class="main-nav">
 
   <input id="nav-toggle" type="checkbox" hidden>
@@ -24,17 +24,25 @@
 
   <!-- Main heading for the page -->
   <h1>Blog</h1>
+    <!-- Theme toggle (only shown when JS is on) -->
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-pressed="false"
+    >
+    🌙 Dark mode
+    </button>
 
-  <!-- Reused navigation bar for consistency across the site -->
   <nav aria-label="Primary">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="experiences.html">Experience</a></li>
-      <!-- aria-current added to indicate current page in nav -->
       <li><a href="blog.html" aria-current="page">Blog</a></li>
-      <li><a href="connect.html">Connect</a></li>
-    </ul>
+      <li><a href="form-with-js.html">form-with-js</a></li>
+      <li><a href="form-no-js.html">form-no-js</a></li>
+  </ul>
   </nav>
 </header>
 
@@ -66,8 +74,6 @@
   </article>
 
 </main>
-
-</section>
 
 <footer class="main-nav">
   <!-- Social navigation -->

@@ -9,23 +9,31 @@
   <!--Link to css stylesheet-->
   <link rel="stylesheet" href="style.css">
 
-  <!-- I left a placeholder for the JS-->
-  <noscript>
-    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
-  </noscript>
-
   <!-- link to script.js file -->
-  <script type="module" src="assets/script.js"></script>
+  <script src="script.js"></script>
   
 </head>
 
 <body>
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
+  </noscript>
+
   <header class="main-nav">
 
     <input id="nav-toggle" type="checkbox" hidden>
     <label for="nav-toggle" class="burger" aria-label="Toggle menu">☰</label>
   
   <h1>Experience</h1>
+  <!-- Theme toggle (only shown when JS is on) -->
+  <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-pressed="false"
+  >
+    🌙 Dark mode
+  </button>
 
   <!-- Consistent nav bar across all pages -->
   <nav aria-label="Primary">
@@ -34,8 +42,9 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="experiences.html" aria-current="page">Experience</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="connect.html">Connect</a></li>
-    </ul>
+      <li><a href="form-with-js.html">form-with-js</a></li>
+      <li><a href="form-no-js.html">form-no-js</a></li>
+  </ul>
   </nav>
 </header>
 

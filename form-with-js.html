@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Connect — Sameera Agarwala (JS Validation)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact form to get in touch with Sameera.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- link to script.js file -->
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+    <noscript>
+        <p>Your browser has JavaScript disabled; some enhancements will not run.</p>
+      </noscript>
+    
+  <header class="main-nav">
+    <input id="nav-toggle" type="checkbox" hidden>
+    <label for="nav-toggle" class="burger" aria-label="Toggle menu">☰</label>
+
+    <h1>Sameera Agarwala</h1>
+    <p><strong>CS: Bioinformatics</strong> · <em>Design &amp; Interaction</em></p>
+    <!-- Theme toggle (only shown when JS is on) -->
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-pressed="false"
+    >
+    🌙 Dark mode
+    </button>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experiences.html">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="form-with-js.html" aria-current="page">form-with-js</a></li>
+        <li><a href="form-no-js.html" >form-no-js</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Contact form for HW4 with JS-based validation -->
+    <form action="https://httpbin.org/post" method="post" novalidate>
+        <fieldset>
+        <legend>Contact me</legend>
+
+        <input type="hidden" name="possible_bot" value="true">
+
+        <!-- Hidden field to send error history -->
+        <input type="hidden" id="form-errors-field" name="form-errors" value="[]">
+
+        <div class="form-field">
+          <label for="name">
+            Name<span class="required-indicator" aria-hidden="true"> *</span>
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            minlength="2"
+            maxlength="60"
+            pattern="[A-Za-z\s'.-]+"
+            placeholder="Jane Doe">
+        </div>
+
+        <div class="form-field">
+          <label for="email">
+            Email<span class="required-indicator" aria-hidden="true"> *</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            maxlength="254"
+            placeholder="name@example.com">
+        </div>
+
+        <div class="form-field">
+          <label for="topic">Topic</label>
+          <input
+            id="topic"
+            name="topic"
+            type="text"
+            maxlength="80"
+            placeholder="Question, collaboration, feedback…">
+        </div>
+
+        <div class="form-field">
+          <label for="msg">
+            Message<span class="required-indicator" aria-hidden="true"> *</span>
+          </label>
+          <textarea
+            id="msg"
+            name="message"
+            rows="5"
+            minlength="10"
+            maxlength="1000"
+            required
+            placeholder="Type your message here..."></textarea>
+
+          <!-- Character countdown -->
+          <div id="char-counter" class="char-counter" aria-live="polite"></div>
+        </div>
+
+        <div class="form-field">
+          <p>Subscribe to follow-up messages?</p>
+          <label>
+            <input type="radio" name="sub" value="yes"> Yes, keep me updated
+          </label>
+          <label>
+            <input type="radio" name="sub" value="no"> No, just respond to this message
+          </label>
+        </div>
+
+        <div class="form-field">
+          <label>
+            <input type="checkbox" name="ack" id="ack" required>
+            I agree to be contacted about my inquiry.
+          </label>
+        </div>
+
+        <button type="submit">Send message</button>
+
+        <div class="form-messages">
+          <output id="error-output" class="error-message" aria-live="polite"></output>
+          <output id="info-output" class="info-message" aria-live="polite"></output>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.querySelector('form');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('msg');
+      const ackCheckbox = document.getElementById('ack');
+      const errorOutput = document.getElementById('error-output');
+      const infoOutput = document.getElementById('info-output');
+      const errorsField = document.getElementById('form-errors-field');
+      const charCounter = document.getElementById('char-counter');
+
+      // Array of previous error attempts 
+      const form_errors = [];
+      window.form_errors = form_errors; 
+
+      function getFieldLabel(field) {
+        const container = field.closest('.form-field');
+        const label = container ? container.querySelector('label') : null;
+        return label
+          ? label.textContent.replace('*', '').trim()
+          : (field.name || field.id || 'This field');
+      }
+
+      function clearErrorMessage() {
+        if (errorOutput) {
+          errorOutput.textContent = '';
+        }
+      }
+
+      // Constraint Validation API to build custom messages
+      function validateField(field) {
+        if (!field) return null;
+
+        // Clear any previous custom message
+        field.setCustomValidity('');
+        let msg = '';
+        const labelText = getFieldLabel(field);
+
+        // If pattern guard flagged this field:
+        if (field.dataset.illegalChar === 'true') {
+          msg = `${labelText} contains characters that are not allowed.`;
+        } else if (field.validity.valueMissing) {
+          msg = `${labelText} is required.`;
+        } else if (field.type === 'email' && field.validity.typeMismatch) {
+          msg = 'Please enter a valid email address, like name@example.com.';
+        } else if (field.validity.tooShort) {
+          msg = `${labelText} must be at least ${field.minLength} characters.`;
+        } else if (field.validity.tooLong) {
+          msg = `${labelText} must be at most ${field.maxLength} characters.`;
+        }
+
+        if (msg) {
+          field.setCustomValidity(msg);
+          field.setAttribute('aria-invalid', 'true');
+        } else {
+          field.removeAttribute('aria-invalid');
+        }
+
+        if (!field.checkValidity()) {
+          return {
+            field: field.name || field.id,
+            message: field.validationMessage,
+            value: field.value
+          };
+        }
+
+        return null;
+      }
+
+      // Flash effect when disallowed characters are typed
+      function flashField(field) {
+        field.classList.add('flash-error');
+        window.setTimeout(() => {
+          field.classList.remove('flash-error');
+        }, 300);
+      }
+
+      // Show a temporary error in the error output
+      let errorTimeoutId;
+      function showTemporaryError(message) {
+        if (!errorOutput) return;
+        errorOutput.textContent = message;
+        if (errorTimeoutId) {
+          window.clearTimeout(errorTimeoutId);
+        }
+        errorTimeoutId = window.setTimeout(() => {
+          if (errorOutput.textContent === message) {
+            errorOutput.textContent = '';
+          }
+        }, 2000);
+      }
+
+      // Guard against illegal characters based on pattern
+      function setupPatternGuard(input) {
+        const pattern = input.getAttribute('pattern');
+        if (!pattern) return;
+
+        // Full-string regex using same pattern as HTML
+        const regex = new RegExp('^' + pattern + '$');
+
+        input.addEventListener('input', () => {
+          const value = input.value;
+
+          if (value === '') {
+            input.dataset.illegalChar = 'false';
+            return;
+          }
+
+          // If value violates pattern, flag it and show a short-lived message.
+          if (!regex.test(value)) {
+            input.dataset.illegalChar = 'true';
+            flashField(input);
+            showTemporaryError(
+              `The "${input.name || input.id}" field does not allow that character.`
+            );
+          } else {
+            input.dataset.illegalChar = 'false';
+          }
+        });
+      }
+
+      // Character countdown for textarea
+      function updateCharCounter() {
+        if (!charCounter || !messageInput) return;
+        const max = messageInput.maxLength || 1000;
+        const used = messageInput.value.length;
+        const remaining = max - used;
+
+        charCounter.textContent = `${remaining} characters remaining`;
+
+        charCounter.classList.toggle('warning', remaining <= 50 && remaining > 10);
+        charCounter.classList.toggle('danger', remaining <= 10);
+      }
+
+      // Info message when form looks valid
+      function updateFormInfo() {
+        if (!infoOutput) return;
+        if (form.checkValidity()) {
+          infoOutput.textContent = 'All required fields currently look valid.';
+        } else {
+          infoOutput.textContent = '';
+        }
+      }
+
+      setupPatternGuard(nameInput);
+
+      // Live validation on input for key fields
+      [nameInput, emailInput, messageInput].forEach((field) => {
+        if (!field) return;
+        field.addEventListener('input', () => {
+          validateField(field);       
+          field.reportValidity();      
+          updateFormInfo();           
+          updateCharCounter();        
+        });
+      });
+
+      // Log errors and send them on successful submit
+      form.addEventListener('submit', (event) => {
+        clearErrorMessage();
+
+        const fieldsToValidate = [nameInput, emailInput, messageInput, ackCheckbox];
+        const currentAttemptErrors = [];
+
+        fieldsToValidate.forEach((field) => {
+          const err = validateField(field);
+          if (err) {
+            currentAttemptErrors.push(err);
+          }
+        });
+
+        if (currentAttemptErrors.length > 0) {
+          event.preventDefault();
+
+          const attempt = {
+            timestamp: new Date().toISOString(),
+            errors: currentAttemptErrors
+          };
+          form_errors.push(attempt); // only on SUBMIT, not on typing
+
+          if (errorOutput && currentAttemptErrors[0]) {
+            errorOutput.textContent = currentAttemptErrors[0].message;
+          }
+
+          // Show browser bubbles for invalid fields
+          form.reportValidity();
+          console.log('Invalid submit logged. form_errors =', form_errors);
+          return;
+        }
+
+        // No errors: attach previous error history as JSON
+        if (errorsField) {
+          errorsField.value = JSON.stringify(form_errors);
+        }
+
+        if (infoOutput) {
+          infoOutput.textContent = 'Submitting form…';
+        }
+        console.log('Submitting valid form. form_errors =', form_errors);
+        // allow normal submit to httpbin.org
+      });
+
+      // Update char counter and info on load
+      updateCharCounter();
+      updateFormInfo();
+    })();
+  </script>
+</body>
+</html>

@@ -7,13 +7,58 @@
     initial-value: lavender;
   }
   
-:root {
-  --bg: #fffbf7;
-  --fg: #111;
-  --card: #ffffff;
-  --accent: #5d5985;
-  --brand: #5d5985;
+  :root {
+    --bg: #fffbf7;
+    --fg: #111;
+    --card: #ffffff;
+    --accent: #5d5985;
+    --brand: #5d5985;
+    --header-bg: rgb(172, 207, 172);
+    --footer-bg: rgb(172, 207, 172);
+
+    --link-hover: rgb(43, 0, 255);
+    --border-subtle: #ccc;
+    --input-bg: #ffffff;
+    --input-text: #111;
+    --placeholder: #888;
+  
+    --error: #b00020;
+    --error-bg: #ffeef0;
+    --success: #1a7f37;
+    --success-bg: #f0fff5;
+    --info: #006400;
+    --muted: #555;
+  
+    --warning: #b36b00;
+  }
+
+/* Dark theme overrides */
+:root[data-theme="dark"] {
+  --bg: #020617;          /* page background */
+  --fg: #f9fafb;          /* main text */
+  --card: #0b1120;        /* cards / form background */
+  --accent: #a5b4fc;
+  --brand: #818cf8;
+  --header-bg: #020617;
+  --footer-bg: #020617;
+
+  --link-hover: #a5b4fc;
+  --border-subtle: #4b5563;
+  --input-bg: #020617;
+  --input-text: #e5e7eb;
+  --placeholder: #9ca3af;
+
+  --error: #fecaca;
+  --error-bg: #450a0a;
+  --success: #bbf7d0;
+  --success-bg: #064e3b;
+  --info: #bfdbfe;
+  --muted: #9ca3af;
+
+  --warning: #facc15;
+
 }
+
 
 * { box-sizing: border-box; }
 
@@ -38,7 +83,7 @@ a {
   color: inherit;
 
   &:hover {
-    color: rgb(43, 0, 255);
+    color: var(--link-hover);
   }
 }
 
@@ -106,11 +151,11 @@ header.main-nav {
 
 /* ===== Footer ===== */
 footer {
-  background-color: rgb(172, 207, 172);
+  background-color: var(--footer-bg);
   justify-content: center;
 
   nav {
-    background-color: rgb(172, 207, 172);
+    background-color: var(--footer-bg);
     justify-content: center;
 
     ul,
@@ -170,6 +215,7 @@ article:has(figure img) {
 
 /* ===== Card ===== */
 .card {
+  color: #000; 
   display: flex;
   flex-direction: column;
   background: var(--tint);
@@ -200,7 +246,7 @@ article:has(figure img) {
 
 /* ===== Header & footer color ===== */
 .main-nav {
-  background-color: rgb(172, 207, 172);
+  background-color: var(--header-bg);
 }
 
 /* ===== Responsive Design Section ===== */
@@ -336,3 +382,266 @@ html {
     border-radius: 8px;
   }
   
+  /* ===== Contact Form (form-no-js.html) ===== */
+
+/* Overall form layout */
+form {
+  width: 100%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem 1.75rem;
+  background-color: var(--card);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Remove default fieldset border and space elements out */
+form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form legend {
+  font-family: "Playfair Display", system-ui, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Each label + field block */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Labels stacked above fields */
+.form-field label,
+form > fieldset > label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Text inputs and textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-subtle);
+  font: inherit;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+/* Make textarea resizable only vertically */
+textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+/* Radio and checkbox fields: keep things readable */
+.form-field p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.form-field input[type="radio"],
+.form-field input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+/* Submit button styled to match your palette */
+button[type="submit"] {
+  margin-top: 0.75rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background-color: var(--brand);
+  color: #fff;
+  align-self: flex-start;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  filter: brightness(1.05);
+}
+
+/* Error + info outputs under the fields */
+.form-messages {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Reserve a little space even when empty */
+.error-message,
+.info-message {
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: var(--error);
+}
+
+.info-message {
+  color: var(--info);
+}
+
+/* Make sure the form looks good on smaller screens */
+@media (max-width: 600px) {
+  form {
+    margin-inline: 1rem;
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* ===== Contact Form Validation States ===== */
+
+/* Required asterisk */
+.required-indicator {
+  color: var(--error);
+}
+
+/* Placeholder styling so :placeholder-shown works cleanly */
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+/* Base input appearance (keeps layout stable) */
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* Focus: keyboard friendly, high contrast */
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Required fields that have been filled and are valid */
+input:required:not(:placeholder-shown):valid,
+textarea:required:not(:placeholder-shown):valid {
+  border-color: var(--success);
+  background-color: var(--success-bg);
+}
+
+/* Required fields that have been filled but are invalid */
+input:required:not(:placeholder-shown):invalid,
+textarea:required:not(:placeholder-shown):invalid {
+  border-color: var(--error);
+  background-color: var(--error-bg);
+}
+
+/* Make the email field extra clear when invalid */
+input[type="email"]:not(:placeholder-shown):invalid {
+  border-color: var(--error);
+}
+
+/* Optional: slightly highlight required fields even before interaction */
+input:required,
+textarea:required {
+  border-left-width: 3px;
+  border-left-color: var(--accent);
+}
+
+/* Keep border widths consistent on valid/invalid so layout does not shift */
+input:required:not(:placeholder-shown):valid,
+textarea:required:not(:placeholder-shown):valid,
+input:required:not(:placeholder-shown):invalid,
+textarea:required:not(:placeholder-shown):invalid {
+  border-left-width: 3px;
+}
+
+/* ===== JS Validation Enhancements (form-with-js.html) ===== */
+
+/* Flash effect when illegal characters are typed */
+.flash-error {
+  animation: flash-bg 0.15s ease-in-out 0s 2;
+}
+
+@keyframes flash-bg {
+  0% { background-color: var(--error-bg); }
+  100% { background-color: var(--card); }
+}
+
+/* Character counter under textarea */
+.char-counter {
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.char-counter.warning {
+  color: var(--warning);
+}
+
+.char-counter.danger {
+  color: var(--error);
+  font-weight: 600;
+}
+
+
+/* ===== Theme Toggle Button ===== */
+
+/* Hidden by default; shown only when JS adds .js class */
+.theme-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--fg) 30%, transparent);
+  background: transparent;
+  color: var(--fg);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background-color: color-mix(in srgb, var(--fg) 6%, var(--bg) 94%);
+}
+
+/* Only show if JS is enabled */
+.js .theme-toggle {
+  display: inline-flex;
+}
+
+/* Place it nicely in the header */
+header.main-nav .theme-toggle {
+  justify-self: end;
+}
+
+
+/* ===== View Transition API (MPA cross-fade) ===== */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+/* Optionally control z-order so new page slides "on top" */
+::view-transition-old(root) {
+  z-index: 0;
+}
+::view-transition-new(root) {
+  z-index: 1;
+}

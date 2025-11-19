@@ -17,7 +17,7 @@
   </noscript>
 
   <!-- link to script.js file -->
-  <script type="module" src="assets/script.js"></script>
+  <script src="script.js"></script>
 
 
   <header class="main-nav">
@@ -26,13 +26,25 @@
     <label for="nav-toggle" class="burger" aria-label="Toggle menu">☰</label>
   
     <h1>Projects</h1>
+    
+    <!-- Theme toggle (only shown when JS is on) -->
+    <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-pressed="false"
+      >
+      🌙 Dark mode
+      </button>
+  
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a aria-current="page" href="projects.html">Projects</a></li>
         <li><a href="experiences.html">Experience</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="connect.html">Connect</a></li>
+        <li><a href="form-with-js.html">form-with-js</a></li>
+        <li><a href="form-no-js.html">form-no-js</a></li>
       </ul>
     </nav>
   </header>

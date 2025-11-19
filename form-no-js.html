@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Connect — Sameera Agarwala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact form to get in touch with Sameera.">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements will not run.</p>
+  </noscript>
+
+  <header class="main-nav">
+    <input id="nav-toggle" type="checkbox" hidden>
+    <label for="nav-toggle" class="burger" aria-label="Toggle menu">☰</label>
+
+    <h1>Sameera Agarwala</h1>
+    <p><strong>CS: Bioinformatics</strong> · <em>Design &amp; Interaction</em></p>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experiences.html">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="form-with-js.html">form-with-js</a></li>
+        <li><a href="form-no-js.html" aria-current="page">form-no-js</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Contact form for HW4 -->
+    <form action="https://httpbin.org/post" method="post">
+      <fieldset>
+        <legend>Contact me</legend>
+    
+        <!-- Hidden possible_bot field-->
+        <input type="hidden" name="possible_bot" value="true">
+    
+        <div class="form-field">
+          <label for="name">Name<span class="required-indicator" aria-hidden="true"> *</span></label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            minlength="2"
+            maxlength="60"
+            pattern="[A-Za-z\s'.-]+"
+            placeholder="Jane Doe">
+        </div>
+    
+        <div class="form-field">
+          <label for="email">Email<span class="required-indicator" aria-hidden="true"> *</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            maxlength="254"
+            placeholder="name@example.com">
+        </div>
+    
+        <div class="form-field">
+          <label for="topic">Topic</label>
+          <input
+            id="topic"
+            name="topic"
+            type="text"
+            maxlength="80"
+            placeholder="Question, collaboration, feedback…">
+        </div>
+    
+        <div class="form-field">
+          <label for="msg">Message<span class="required-indicator" aria-hidden="true"> *</span></label>
+          <textarea
+            id="msg"
+            name="message"
+            rows="5"
+            minlength="10"
+            maxlength="1000"
+            required
+            placeholder="This is a test!"></textarea>
+        </div>
+    
+        <div class="form-field">
+          <p>Subscribe to follow-up messages?</p>
+          <label>
+            <input type="radio" name="sub" value="yes"> Yes, keep me updated
+          </label>
+          <label>
+            <input type="radio" name="sub" value="no"> No, just respond to this message
+          </label>
+        </div>
+    
+        <div class="form-field">
+          <label>
+            <input type="checkbox" name="ack" required>
+            I agree to be contacted about my inquiry.
+          </label>
+        </div>
+    
+        <button type="submit">Send message</button>
+    
+        <div class="form-messages">
+          <output id="error-output" class="error-message" aria-live="polite"></output>
+          <output id="info-output" class="info-message" aria-live="polite"></output>
+        </div>
+      </fieldset>
+    </form>
+      </main>
+</body>
+</html>

@@ -6,22 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio of Sameera Agarwala: projects, experience, blog.">
 
-  <!-- JavaScript file for custom elements (hello-world + portfolio-callout) -->
-  <script type="module" src="assets/script.js"></script>
-
-  <!-- Backup text for users who have JavaScript disabled -->
-  <noscript>
-    <p>Your browser has JavaScript disabled; some enhancements won’t run.</p>
-  </noscript>
+  <script src="script.js"></script>
 
   <!--Link to css stylesheet-->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Links script.js file -->
-  <script src="assets/script.js"></script>
 </head>
 
 <body>
+  <noscript>
+    <p>Your browser has JavaScript disabled; some enhancements (like theme switching) will not run.</p>
+  </noscript>
+
   <header class="main-nav">
 
     <input id="nav-toggle" type="checkbox" hidden>
@@ -30,6 +25,16 @@
     <h1>Sameera Agarwala</h1>
     <p><strong>CS: Bioinformatics</strong> &middot; <em>Design & Interaction</em></p>
 
+    <!-- Theme toggle (only shown when JS is on) -->
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-pressed="false"
+    >
+    🌙 Dark mode
+    </button>
+
     <!-- Navigation bar -->
     <nav aria-label="Primary">
       <ul>
@@ -37,7 +42,8 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="experiences.html">Experience</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="connect.html">Connect</a></li>
+        <li><a href="form-with-js.html">form-with-js</a></li>
+        <li><a href="form-no-js.html">form-no-js</a></li>
       </ul>
     </nav>
   </header>
