@@ -10,7 +10,7 @@
   :root {
     --bg: #fffbf7;
     --fg: #111;
-    --card: #ffffff;
+    --project-card: #ffffff;
     --accent: #5d5985;
     --brand: #5d5985;
     --header-bg: rgb(172, 207, 172);
@@ -36,7 +36,7 @@
 :root[data-theme="dark"] {
   --bg: #020617;          /* page background */
   --fg: #f9fafb;          /* main text */
-  --card: #0b1120;        /* cards / form background */
+  --project-card: #0b1120;        /* cards / form background */
   --accent: #a5b4fc;
   --brand: #818cf8;
   --header-bg: #020617;
@@ -67,6 +67,10 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   margin: 0;
+}
+
+figcaption {
+  justify-content: center;
 }
 
 /* ===== Utilities ===== */
@@ -213,8 +217,8 @@ article:has(figure img) {
   border: 1px solid color-mix(in oklab, var(--brand) 25%, #000 5%);
 }
 
-/* ===== Card ===== */
-.card {
+/* ===== Project Card ===== */
+.project-card {
   color: #000; 
   display: flex;
   flex-direction: column;
@@ -320,7 +324,7 @@ html {
     gap: 1rem;
     grid-template-columns: 1fr; /* 1 column for phone */
   }
-  .card {
+  .project-card {
     max-width: 80%; 
   }
   
@@ -390,7 +394,7 @@ form {
   max-width: 40rem;
   margin: 2rem auto;
   padding: 1.5rem 1.75rem;
-  background-color: var(--card);
+  background-color: var(--project-card);
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -578,7 +582,7 @@ textarea:required:not(:placeholder-shown):invalid {
 
 @keyframes flash-bg {
   0% { background-color: var(--error-bg); }
-  100% { background-color: var(--card); }
+  100% { background-color: var(--project-card); }
 }
 
 /* Character counter under textarea */
