@@ -241,3 +241,9 @@ class ProjectCard extends HTMLElement {
 }
 
 customElements.define("project-card", ProjectCard);
+
+// PART 2: DATA LOADING
+const grid = document.getElementById("projects-grid");
+const loadLocalBtn = document.getElementById("load-local");
+const loadRemoteBtn = document.getElementById("load-remote");
+
