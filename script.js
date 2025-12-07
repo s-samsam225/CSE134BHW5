@@ -324,7 +324,12 @@ loadLocalBtn.addEventListener("click", () => {
 loadRemoteBtn.addEventListener("click", async () => {
   try {
     const response = await fetch(
-      "https://my-json-server.typicode.com/yourgithubusername/yourrepo/projects"
+      "https://api.jsonbin.io/v3/b/69353a58d0ea881f401848ba",
+      {
+        headers: {
+          'X-Master-Key': "$2a$10$/ryKFCqZizp3eiWliqfnCee7EtGl3c76AtEXunkj5/MWOawekF6vC"
+        }
+      }
     );
     const data = await response.json();
     renderProjects(data);
