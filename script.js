@@ -251,22 +251,20 @@ const loadRemoteBtn = document.getElementById("load-remote");
 // LocalStorage Data
 const localProjects = [
   {
-    title: "Educational Sustainability App",
-    role: "Software Engineer",
-    date: "2025-04",
-    location: "Planet Flip, San Diego, CA",
-    image: "assets/projects/EnergyAveHome.png",
-    alt: "Home screen from the Energy Avenue sustainability education game",
-    tech: "Construct 3, JavaScript",
-    focus: "Sustainability education, energy conservation stats",
-    link: "https://aquamarine-faloodeh-96404d.netlify.app/",
-    responsibilities: [
-      "Collaborated with a multidisciplinary team",
-      "Designed for elementary school learners",
-      "Coordinated progress with partner organization"
+    "title": "Neurotech EEG Device",
+    "role": "Engineering Team Lead",
+    "date": "2025-01",
+    "location": "Cognovate Labs",
+    "image": "assets/projects/EEGblenderMockup.png",
+    "alt": "Portable EEG diagnostics hardware",
+    "tech": "Blender, Solid Works, OpenBCI",
+    "focus": "Stroke triage and diagnostics",
+    "link": "https://www.instagram.com/p/DRO3fUUEes1/?img_index=1",
+    "responsibilities": [
+      "Built EEG hardware",
+      "Iterated sketches on Solid Works and Blender"
     ]
-  },
-  {
+  },{
     title: "Fourth Trimester App (Concept)",
     role: "Designer / Developer",
     date: "2025-03",
