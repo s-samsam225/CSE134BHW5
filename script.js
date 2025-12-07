@@ -383,3 +383,37 @@ if (form) {
     form.reset();
   });
 }
+
+const updateBtn = document.getElementById("update-btn");
+
+if (updateBtn) {
+  updateBtn.addEventListener("click", async () => {
+    const data = Object.fromEntries(new FormData(form));
+    data.responsibilities = data.responsibilities.split(",").map(s => s.trim());
+
+    const response = await fetch(JSONBIN_URL, {
+      headers: { "X-Master-Key": JSONBIN_KEY }
+    });
+
+    const result = await response.json();
+    let projects = result.record.projects;
+
+    projects = projects.map(p =>
+      p.title === data.title ? data : p 
+    );
+
+    await fetch(JSONBIN_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": JSONBIN_KEY
+      },
+      body: JSON.stringify({ projects })
+    });
+
+    statusText.textContent = "Project updated successfully!";
+    form.reset();
+  });
+}
+
+
