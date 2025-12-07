@@ -314,3 +314,21 @@ function renderProjects(projects) {
     grid.appendChild(card);
   });
 }
+
+loadLocalBtn.addEventListener("click", () => {
+  const data = JSON.parse(localStorage.getItem("projects"));
+  renderProjects(data);
+});
+
+
+loadRemoteBtn.addEventListener("click", async () => {
+  try {
+    const response = await fetch(
+      "https://my-json-server.typicode.com/yourgithubusername/yourrepo/projects"
+    );
+    const data = await response.json();
+    renderProjects(data);
+  } catch (err) {
+    console.error("Remote load failed:", err);
+  }
+});
