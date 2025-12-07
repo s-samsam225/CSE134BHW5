@@ -348,3 +348,38 @@ loadRemoteBtn.addEventListener("click", async () => {
     console.error("Remote load failed:", err);
   }
 });
+
+const form = document.getElementById("crud-form");
+const statusText = document.getElementById("crud-status");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = Object.fromEntries(new FormData(form));
+    data.responsibilities = data.responsibilities.split(",").map(s => s.trim());
+
+    const response = await fetch(JSONBIN_URL, {
+      method: "GET",
+      headers: { "X-Master-Key": JSONBIN_KEY }
+    });
+
+    const result = await response.json();
+    const projects = result.record.projects;
+
+    // Pushes data to create post
+    projects.push(data);
+
+    await fetch(JSONBIN_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": JSONBIN_KEY
+      },
+      body: JSON.stringify({ projects })
+    });
+
+    statusText.textContent = "Project created successfully!";
+    form.reset();
+  });
+}
