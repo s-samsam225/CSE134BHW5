@@ -417,3 +417,29 @@ if (updateBtn) {
 }
 
 
+const deleteBtn = document.getElementById("delete-btn");
+
+if (deleteBtn) {
+  deleteBtn.addEventListener("click", async () => {
+    const title = form.title.value;
+
+    const response = await fetch(JSONBIN_URL, {
+      headers: { "X-Master-Key": JSONBIN_KEY }
+    });
+
+    const result = await response.json();
+    const projects = result.record.projects.filter(p => p.title !== title);
+
+    await fetch(JSONBIN_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": JSONBIN_KEY
+      },
+      body: JSON.stringify({ projects })
+    });
+
+    statusText.textContent = "Project deleted successfully!";
+    form.reset();
+  });
+}
