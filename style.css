@@ -319,13 +319,19 @@ html {
     }
   }
   .posts,
-  .projects {
+  .projects,
+  .projects-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr; /* 1 column for phone */
+    grid-template-columns: 1fr;
+
+    padding: 2rem 5vw;
+
   }
+
   .project-card {
     max-width: 80%; 
+    margin: 0 auto;
   }
   
   /* ===== Tablet & Small Laptop (≥700px) ===== */

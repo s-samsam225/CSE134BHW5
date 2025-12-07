@@ -50,82 +50,47 @@
   </header>
 
   <main id="content">
-    <section>
-
-      <!-- Project 1 -->
-      <article class="project-card">
-        <header>
-          <h2><a href="EnergyAve.html">Educational Sustainability App</a>, Software Engineer</h2>
-          <ul>
-            <li><time datetime="2025-04">Apr 2025</time></li>
-            <li>Planet Flip in San Diego, CA</li>
-          </ul>
-        </header>
-        
-        <figure>
-          <picture>
-            <source
-              srcset="assets/projects/EnergyAveHome.webp 800w"
-              type="image/webp">
-            <img
-              src="assets/projects/EnergyAveHome.png"
-              alt="Home screen from the Energy Avenue sustainability education game"
-              loading="lazy" decoding="async"
-              style="max-width:100%; height:auto; border-radius:8px; display:block;"
-              >
-          </picture>
-          <figcaption>Home screen of the game demo.</figcaption>
-        </figure>
-        
-        <h4>Areas of focus:</h4>
-        <ul>
-          <li><strong>Tech: </strong> Construct 3 &amp; JavaScript</li>
-          <li><strong>Focus: </strong> Sustainability education, energy conservation stats</li>
-        </ul>
-
-        <h4>Roles and responsibilities:</h4>
-        <ol>
-          <li>Collaborated with a multidisciplinary team to develop <strong>Energy Avenue</strong>.</li>
-          <li>Designed for elementary school learners to make sustainability engaging and age-appropriate.</li>
-          <li>Coordinated progress and Q&amp;A with the partner organization’s lead coordinator.</li>
-        </ol>
-
-        <p>
-          <a href="https://aquamarine-faloodeh-96404d.netlify.app/"
-             target="_blank" rel="noopener"
-             aria-label="Open Energy Avenue demo in a new tab">
-             Demo ↗︎
-          </a>
-        </p>
-        </article>
-
-      <!-- Project 2 -->
-      <article class="project-card"> 
-        <header>
-          <h2><a href="accentureCaseStudy.html">Fourth Trimester App (Concept)</a></h2>
-          <p><time datetime="2025-03">Mar 2025</time> • <strong>Role:</strong> Designer/Developer • Girls Who Code &amp; Accenture</p>
-        </header>
-
-        <figure>
-          <img src="assets/projects/AccentureAppWireframe.png" height="300" alt="Concept wireframe for a postpartum support app aimed at accessibility and calm UI">
-          <figcaption>Concept wireframe for the postpartum support app.</figcaption>
-        </figure>
-
-        <h4>Areas of focus:</h4>
-        <ul>
-          <li>Tech: Canva &amp; Figma</li>
-          <li>Focus: Accessibility, simple flows, calming UI</li>
-        </ul>
-
-        <h4>Roles and responsibilities:</h4>
-        <ul>
-            <li>Completed my case study and presented results to Accenture volunteers</li>
-          </ul>
+    <section class="projects-grid">
   
-      </article>
+      <project-card
+        title="Educational Sustainability App"
+        role="Software Engineer"
+        date="2025-04"
+        location="Planet Flip, San Diego, CA"
+        image="assets/projects/EnergyAveHome.png"
+        alt="Home screen from the Energy Avenue sustainability education game"
+        tech="Construct 3, JavaScript"
+        focus="Sustainability education, energy conservation stats"
+        link="https://aquamarine-faloodeh-96404d.netlify.app/"
+      >
+        <ul slot="responsibilities">
+          <li>Collaborated with a multidisciplinary team to develop Energy Avenue</li>
+          <li>Designed for elementary school learners</li>
+          <li>Coordinated progress with the partner organization’s coordinator</li>
+        </ul>
+      </project-card>
+  
+  
+      <project-card
+        title="Fourth Trimester App (Concept)"
+        role="Designer / Developer"
+        date="2025-03"
+        location="Girls Who Code & Accenture"
+        image="assets/projects/AccentureAppWireframe.png"
+        alt="Concept wireframe for a postpartum support app aimed at accessibility and calm UI"
+        tech="Canva, Figma"
+        focus="Accessibility, calm UI, postpartum support"
+        link="accentureCaseStudy.html"
+      >
+        <ul slot="responsibilities">
+          <li>Created full UX case study</li>
+          <li>Presented findings to Accenture volunteers</li>
+        </ul>
+      </project-card>
+  
     </section>
   </main>
-
+  
   <footer class="main-nav">
     <!-- Social navigation -->
     <nav aria-label="Social links">
