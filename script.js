@@ -318,34 +318,31 @@ const JSONBIN_KEY = "$2a$10$/ryKFCqZizp3eiWliqfnCee7EtGl3c76AtEXunkj5/MWOawekF6v
 const JSONBIN_URL = `https://api.jsonbin.io/v3/b/69353a58d0ea881f401848ba`;
 
 
-loadLocalBtn.addEventListener("click", () => {
-  const data = JSON.parse(localStorage.getItem("projects"));
-  renderProjects(data);
-});
+if (loadLocalBtn && grid) {
+  loadLocalBtn.addEventListener("click", () => {
+    const data = JSON.parse(localStorage.getItem("projects"));
+    renderProjects(data);
+  });
+}
 
-
-loadRemoteBtn.addEventListener("click", async () => {
-  try {
-    const response = await fetch(
-      "https://api.jsonbin.io/v3/b/69353a58d0ea881f401848ba",
-      {
+if (loadRemoteBtn && grid) {
+  loadRemoteBtn.addEventListener("click", async () => {
+    try {
+      const response = await fetch(JSONBIN_URL, {
         headers: {
-          "X-Master-Key": "$2a$10$/ryKFCqZizp3eiWliqfnCee7EtGl3c76AtEXunkj5/MWOawekF6vC"
+          "X-Master-Key": JSONBIN_KEY
         }
-      }
-    );
+      });
 
-    const result = await response.json();
+      const result = await response.json();
+      const projects = result.record.projects;
+      renderProjects(projects);
+    } catch (err) {
+      console.error("Remote load failed:", err);
+    }
+  });
+}
 
-    console.log("FULL JSONBIN RESPONSE:", result);
-
-    const projects = result.record.projects;
-
-    renderProjects(projects);
-  } catch (err) {
-    console.error("Remote load failed:", err);
-  }
-});
 
 const form = document.getElementById("crud-form");
 const statusText = document.getElementById("crud-status");
