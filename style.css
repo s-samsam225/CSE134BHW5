@@ -212,11 +212,6 @@ footer {
   }
 }
 
-/* ===== Extra Credit example ===== */
-article:has(figure img) {
-  border: 1px solid color-mix(in oklab, var(--brand) 25%, #000 5%);
-}
-
 /* ===== Project Card ===== */
 .project-card {
   color: #000; 
@@ -227,7 +222,7 @@ article:has(figure img) {
   transition: transform .12s ease, box-shadow .12s ease;
   justify-content: center;
   gap: 20px;
-  margin: 4rem auto;
+  margin: 0 auto;
   padding: 1rem;
   border-radius: 16px;
   max-width: 80%;
@@ -327,11 +322,6 @@ html {
 
     padding: 2rem 5vw;
 
-  }
-
-  .project-card {
-    max-width: 80%; 
-    margin: 0 auto;
   }
   
   /* ===== Tablet & Small Laptop (≥700px) ===== */
@@ -527,14 +517,6 @@ input::placeholder,
 textarea::placeholder {
   color: #888;
   opacity: 1;
-}
-
-/* Base input appearance (keeps layout stable) */
-input[type="text"],
-input[type="email"],
-textarea {
-  border: 1px solid #ccc;
-  background-color: #fff;
 }
 
 /* Focus: keyboard friendly, high contrast */
