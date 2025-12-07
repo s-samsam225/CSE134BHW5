@@ -327,12 +327,18 @@ loadRemoteBtn.addEventListener("click", async () => {
       "https://api.jsonbin.io/v3/b/69353a58d0ea881f401848ba",
       {
         headers: {
-          'X-Master-Key': "$2a$10$/ryKFCqZizp3eiWliqfnCee7EtGl3c76AtEXunkj5/MWOawekF6vC"
+          "X-Master-Key": "$2a$10$/ryKFCqZizp3eiWliqfnCee7EtGl3c76AtEXunkj5/MWOawekF6vC"
         }
       }
     );
-    const data = await response.json();
-    renderProjects(data);
+
+    const result = await response.json();
+
+    console.log("FULL JSONBIN RESPONSE:", result);
+
+    const projects = result.record.projects;
+
+    renderProjects(projects);
   } catch (err) {
     console.error("Remote load failed:", err);
   }
