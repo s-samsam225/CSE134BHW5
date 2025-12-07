@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CRUD Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <h1>Manage Projects (CRUD)</h1>
+
+    <form id="crud-form">
+      <input name="title" placeholder="Title" required>
+      <input name="role" placeholder="Role" required>
+      <input name="date" placeholder="YYYY-MM" required>
+      <input name="location" placeholder="Location" required>
+      <input name="image" placeholder="Image URL" required>
+      <input name="alt" placeholder="Alt text" required>
+      <input name="tech" placeholder="Tech Stack" required>
+      <input name="focus" placeholder="Project Focus" required>
+      <input name="link" placeholder="Project Link" required>
+      <textarea name="responsibilities" placeholder="Comma-separated responsibilities" required></textarea>
+
+      <button type="submit" id="create-btn">Create</button>
+      <button type="button" id="update-btn">Update</button>
+      <button type="button" id="delete-btn">Delete</button>
+    </form>
+
+    <p id="crud-status"></p>
+  </main>
+
+</body>
+</html>
