@@ -660,6 +660,7 @@ header.main-nav .theme-toggle {
 .project-controls {
   display: flex;
   justify-content: center;
+  align-items: center;       
   gap: 1rem;
   margin: 2rem 0;
 }
@@ -672,6 +673,7 @@ header.main-nav .theme-toggle {
   cursor: pointer;
   background-color: var(--brand);
   color: white;
+  justify-self: center;
 }
 
 .projects-controls button:hover {
