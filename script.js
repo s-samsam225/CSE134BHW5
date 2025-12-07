@@ -284,3 +284,33 @@ const localProjects = [
 ];
 
 localStorage.setItem("projects", JSON.stringify(localProjects));
+
+function renderProjects(projects) {
+  grid.innerHTML = "";
+
+  projects.forEach(project => {
+    const card = document.createElement("project-card");
+
+    card.setAttribute("title", project.title);
+    card.setAttribute("role", project.role);
+    card.setAttribute("date", project.date);
+    card.setAttribute("location", project.location);
+    card.setAttribute("image", project.image);
+    card.setAttribute("alt", project.alt);
+    card.setAttribute("tech", project.tech);
+    card.setAttribute("focus", project.focus);
+    card.setAttribute("link", project.link);
+
+    const ul = document.createElement("ul");
+    ul.slot = "responsibilities";
+
+    project.responsibilities.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+
+    card.appendChild(ul);
+    grid.appendChild(card);
+  });
+}
