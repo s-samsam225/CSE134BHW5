@@ -50,45 +50,14 @@
   </header>
 
   <main id="content">
-    <section class="projects-grid">
-  
-      <project-card
-        title="Educational Sustainability App"
-        role="Software Engineer"
-        date="2025-04"
-        location="Planet Flip, San Diego, CA"
-        image="assets/projects/EnergyAveHome.png"
-        alt="Home screen from the Energy Avenue sustainability education game"
-        tech="Construct 3, JavaScript"
-        focus="Sustainability education, energy conservation stats"
-        link="https://aquamarine-faloodeh-96404d.netlify.app/"
-      >
-        <ul slot="responsibilities">
-          <li>Collaborated with a multidisciplinary team to develop Energy Avenue</li>
-          <li>Designed for elementary school learners</li>
-          <li>Coordinated progress with the partner organization’s coordinator</li>
-        </ul>
-      </project-card>
-  
-  
-      <project-card
-        title="Fourth Trimester App (Concept)"
-        role="Designer / Developer"
-        date="2025-03"
-        location="Girls Who Code & Accenture"
-        image="assets/projects/AccentureAppWireframe.png"
-        alt="Concept wireframe for a postpartum support app aimed at accessibility and calm UI"
-        tech="Canva, Figma"
-        focus="Accessibility, calm UI, postpartum support"
-        link="accentureCaseStudy.html"
-      >
-        <ul slot="responsibilities">
-          <li>Created full UX case study</li>
-          <li>Presented findings to Accenture volunteers</li>
-        </ul>
-      </project-card>
-  
+    <section class="projects-controls">
+      <button id="load-local">Load Local</button>
+      <button id="load-remote">Load Remote</button>
     </section>
+    
+    <section class="projects-grid" id="projects-grid">
+    </section>
+    
   </main>
   
   <footer class="main-nav">
