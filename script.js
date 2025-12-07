@@ -247,3 +247,40 @@ const grid = document.getElementById("projects-grid");
 const loadLocalBtn = document.getElementById("load-local");
 const loadRemoteBtn = document.getElementById("load-remote");
 
+
+// LocalStorage Data
+const localProjects = [
+  {
+    title: "Educational Sustainability App",
+    role: "Software Engineer",
+    date: "2025-04",
+    location: "Planet Flip, San Diego, CA",
+    image: "assets/projects/EnergyAveHome.png",
+    alt: "Home screen from the Energy Avenue sustainability education game",
+    tech: "Construct 3, JavaScript",
+    focus: "Sustainability education, energy conservation stats",
+    link: "https://aquamarine-faloodeh-96404d.netlify.app/",
+    responsibilities: [
+      "Collaborated with a multidisciplinary team",
+      "Designed for elementary school learners",
+      "Coordinated progress with partner organization"
+    ]
+  },
+  {
+    title: "Fourth Trimester App (Concept)",
+    role: "Designer / Developer",
+    date: "2025-03",
+    location: "Girls Who Code & Accenture",
+    image: "assets/projects/AccentureAppWireframe.png",
+    alt: "Concept wireframe for postpartum support app",
+    tech: "Canva, Figma",
+    focus: "Accessibility, calm UI, postpartum support",
+    link: "accentureCaseStudy.html",
+    responsibilities: [
+      "Designed full UX case study",
+      "Presented findings to Accenture volunteers"
+    ]
+  }
+];
+
+localStorage.setItem("projects", JSON.stringify(localProjects));
