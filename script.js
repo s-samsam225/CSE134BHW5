@@ -315,6 +315,11 @@ function renderProjects(projects) {
   });
 }
 
+const JSONBIN_ID = "69353a58d0ea881f401848ba";
+const JSONBIN_KEY = "$2a$10$/ryKFCqZizp3eiWliqfnCee7EtGl3c76AtEXunkj5/MWOawekF6vC";
+const JSONBIN_URL = `https://api.jsonbin.io/v3/b/69353a58d0ea881f401848ba`;
+
+
 loadLocalBtn.addEventListener("click", () => {
   const data = JSON.parse(localStorage.getItem("projects"));
   renderProjects(data);
